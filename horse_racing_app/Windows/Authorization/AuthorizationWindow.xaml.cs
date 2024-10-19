@@ -1,4 +1,7 @@
 ﻿using horse_racing_app.Model;
+using horse_racing_app.Windows;
+using horse_racing_app.Windows.Jockey;
+using horse_racing_app.Windows.Judges;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -30,18 +33,34 @@ namespace horse_racing_app.Window
                 if (user != null)
                 {
                     MessageBox.Show("Добро пожаловать, " + user.Username + "!");
+
+                    if (user.RoleId == 1)
+                    {
+                        JudgesWindow judgesWindow = new JudgesWindow();
+                        judgesWindow.ShowDialog();
+                    }
+                    else if (user.RoleId == 3)
+                    {
+                        JockeyWindow jockeyWindow = new JockeyWindow();
+                        jockeyWindow.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ошибка: Неизвестная роль пользователя.");
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Ошибка: Неправильное имя пользователя или пароль.");
                 }
             }
-
         }
 
         private void FanButton_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Добро пожаловать, болельщик!");
+            FanWindow fanWindow = new FanWindow();
+            fanWindow.ShowDialog();
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)

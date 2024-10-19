@@ -10,16 +10,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Windows\main.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Include="Images\transparent-horse-animal-sports-jockey.ico" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\" />
     <Folder Include="Componets\" />
+    <Folder Include="Pages\Judges\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,10 +27,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Windows\main.jpg" />
   </ItemGroup>
 
 </Project>
