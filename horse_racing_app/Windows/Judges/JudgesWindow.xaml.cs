@@ -23,5 +23,12 @@ namespace horse_racing_app.Windows.Judges
         {
             InitializeComponent();
         }
+
+        private void ReturnButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow main = new MainWindow();
+            main.Show();
+            this.Close();
+        }
     }
 }
