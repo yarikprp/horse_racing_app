@@ -28,5 +28,12 @@ namespace horse_racing_app.Windows
             CheckResultsPage.Navigate(new CheckResultsPage());
             DonatePage.Navigate(new DonatePage());
         }
+
+        private void ReturnButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow main = new MainWindow();
+            main.Show();
+            this.Close();
+        }
     }
 }

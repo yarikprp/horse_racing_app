@@ -37,12 +37,14 @@ namespace horse_racing_app.Window
                     if (user.RoleId == 1)
                     {
                         JudgesWindow judgesWindow = new JudgesWindow();
-                        judgesWindow.ShowDialog();
+                        judgesWindow.Show();
+                        this.Close();
                     }
                     else if (user.RoleId == 3)
                     {
                         JockeyWindow jockeyWindow = new JockeyWindow();
-                        jockeyWindow.ShowDialog();
+                        jockeyWindow.Show();
+                        this.Close();
                     }
                     else
                     {
@@ -60,11 +62,14 @@ namespace horse_racing_app.Window
         {
             MessageBox.Show("Добро пожаловать, болельщик!");
             FanWindow fanWindow = new FanWindow();
-            fanWindow.ShowDialog();
+            fanWindow.Show();
+            this.Close();
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
             this.Close();
         }
     }

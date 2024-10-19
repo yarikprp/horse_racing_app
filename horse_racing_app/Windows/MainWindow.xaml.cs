@@ -26,13 +26,15 @@ namespace horse_racing_app
         private void StartWork_Click(object sender, RoutedEventArgs e)
         {
             AuthorizationWindow authorizationWindow = new AuthorizationWindow();
-            authorizationWindow.ShowDialog();
+            authorizationWindow.Show();
+            this.Close();
         }
 
         private void Info_Click(object sender, RoutedEventArgs e)
         {
             InformationWindow infoWindow = new InformationWindow();
-            infoWindow.ShowDialog();
+            infoWindow.Show();
+            this.Close();
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
