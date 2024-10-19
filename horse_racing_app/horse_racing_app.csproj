@@ -6,11 +6,15 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Images\transparent-horse-animal-sports-jockey.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="Images\transparent-horse-animal-sports-jockey.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Pages\" />
-    <Folder Include="Images\" />
     <Folder Include="Componets\" />
     <Folder Include="Window\" />
   </ItemGroup>
