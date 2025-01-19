@@ -1,21 +1,8 @@
 ﻿using horse_racing_app.Model;
-using horse_racing_app.Windows;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace horse_racing_app.Pages
 {
@@ -44,9 +31,51 @@ namespace horse_racing_app.Pages
         {
             if (ValidateInputs())
             {
+                ShowCardTypeLogo(CardNumberTextBox.Text);
                 MessageBox.Show("Данные успешно отправлены!");
                 ClearData();
             }
+        }
+
+        private void ShowCardTypeLogo(string cardNumber)
+        {
+            string logoPath = GetCardLogoPath(cardNumber);
+            if (logoPath != null)
+            {
+                CardTypeLogo.Source = new BitmapImage(new Uri(logoPath, UriKind.Relative));
+                CardTypeLogo.Visibility = Visibility.Visible;  
+            }
+            else
+            {
+                CardTypeLogo.Visibility = Visibility.Collapsed; 
+            }
+        }
+
+        private string GetCardLogoPath(string cardNumber)
+        {
+            if (IsVisa(cardNumber))
+                return "Images/Cards/visa.png";  
+            else if (IsMasterCard(cardNumber))
+                return "Images/Cards/mastercard.png"; 
+
+            else
+                return null;
+        }
+
+        private bool IsVisa(string cardNumber)
+        {
+            return cardNumber.StartsWith("4") && cardNumber.Length == 16;
+        }
+
+        private bool IsMasterCard(string cardNumber)
+        {
+            return (cardNumber.StartsWith("51") || cardNumber.StartsWith("52") || cardNumber.StartsWith("53") ||
+                    cardNumber.StartsWith("54") || cardNumber.StartsWith("55")) && cardNumber.Length == 16;
+        }
+
+        private bool IsAmex(string cardNumber)
+        {
+            return (cardNumber.StartsWith("34") || cardNumber.StartsWith("37")) && cardNumber.Length == 15;
         }
 
         private bool ValidateInputs()

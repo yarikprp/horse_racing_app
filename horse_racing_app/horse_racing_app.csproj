@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <Folder Include="Componets\" />
+    <Folder Include="Images\Cards\" />
     <Folder Include="Pages\Judges\" />
   </ItemGroup>
 

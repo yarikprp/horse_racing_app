@@ -33,6 +33,7 @@
                 <StackPanel Orientation="Horizontal" Margin="0,5">
                     <Label Content="Номер банковской карты:" Width="150" VerticalAlignment="Center"/>
                     <TextBox x:Name="CardNumberTextBox" Width="220" MaxWidth="250" MaxLength="16" />
+                    <Image x:Name="CardTypeLogo" Width="100" Height="60" Margin="5,10" Visibility="Collapsed" VerticalAlignment="Center"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="0,5">
